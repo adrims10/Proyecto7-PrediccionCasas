@@ -16,10 +16,10 @@ El mercado inmobiliario es dinámico y está influenciado por múltiples variabl
 Hemos creado un entorno de trabajo estructurado de la siguiente manera:
 
 
-├── notebooks/           # Notebooks de Jupyter donde podemos encontrar el tratado de datos y el modelo                                          ├── src/                 # Scripts de procesamiento, modelado y predicción
+├── notebooks/           # Notebooks de Jupyter donde podemos encontrar el tratado de datos y el modelo                                         ├── src/                 # Scripts de procesamiento, modelado y predicción
 ├── datos/                # Archivos CSV y otros datos recopilados
 ├── README.md            # Descripción del proyecto en español
-├── Archivo presentacion resultados    #Descripción y conclusiones del modelo
+
 
 🛠️ Instalación y Requisitos
 Este proyecto utiliza Python 3.12.6. Aquí tienes las bibliotecas necesarias:
@@ -185,6 +185,82 @@ los valores reales:
 Proceso y conclusiones modelo
  i. Precio real: 720.00, Predicción: 719.85
  ii. Precio real: 699.00, Predicción: 699.12
+
+## Resultado Modelo 4:
+
+División de Datos:
+a. Datos de entrenamiento y prueba:
+
+El conjunto de datos fue dividido en un 70% para entrenamiento y un 30% para prueba.
+El conjunto de entrenamiento tiene una forma de (70, 24), mientras que el conjunto de prueba tiene una forma de (283, 24).
+Modelo de Predicción:
+a. Tipo de modelo:
+
+Se utilizó un modelo de Decision Tree Regressor.
+Se optimizó mediante una búsqueda de hiperparámetros utilizando GridSearchCV, con los mejores parámetros encontrados siendo:
+max_depth: 5
+max_leaf_nodes: 4
+min_samples_leaf: 10
+min_samples_split: 10
+b. Entrenamiento del modelo:
+
+El modelo fue entrenado con el conjunto de datos preprocesados, utilizando los mejores parámetros encontrados.
+Evaluación del Modelo:
+
+a. Métrica principal - RMSE (Root Mean Squared Error):
+
+El RMSE calculado para el modelo es 27.50.
+
+Este valor indica una mayor desviación entre las predicciones y los valores reales, sugiriendo que el modelo podría mejorar en precisión.
+
+El coeficiente 𝑅2 del modelo es 0.80, lo que significa que el modelo explica el 80% de la varianza de los datos de prueba, indicando un buen ajuste. 
+
+Precio Real	Predicción
+720.00	725.56
+699.00	687.56
+
+Conclusiones:
+Modelo de Árbol de Decisión: Aunque el modelo tiene un RMSE relativamente alto de 27.50, su 
+𝑅2 de 0.80 sugiere que captura bien la variabilidad de los datos. Sin embargo, es posible que un ajuste más fino de los parámetros o el uso de un modelo más complejo pueda mejorar su rendimiento.
+
+
+## Resultado Modelo 5:
+
+División de Datos:
+a. Datos de entrenamiento y prueba:
+El conjunto de datos fue dividido en un 70% para entrenamiento y un 30% para prueba.
+El conjunto de entrenamiento tiene una forma de (70, 24) y el conjunto de prueba tiene una forma de (283, 24).
+
+Modelo de Predicción:
+a. Tipo de modelo:
+Se utilizó un modelo de RandomForestRegressor.
+
+Se optimizó mediante una búsqueda de hiperparámetros utilizando GridSearchCV, con los mejores parámetros encontrados siendo:
+max_depth: 5
+max_features: 'sqrt'
+min_samples_leaf: 10
+min_samples_split: 10
+n_estimators: 200
+
+b. Entrenamiento del modelo:
+
+El modelo fue entrenado con el conjunto de datos preprocesados, utilizando los mejores parámetros encontrados.
+
+Evaluación del Modelo:
+
+a. Métrica principal - RMSE (Root Mean Squared Error):
+
+El RMSE calculado para el modelo es 45.25, lo que indica una mayor desviación entre las predicciones y los valores reales en comparación con otros modelos. Esto sugiere que el modelo podría no estar capturando adecuadamente la variabilidad de los datos.
+b. Métrica secundaria - 𝑅2 del modelo es 0.46, lo que significa que el modelo explica solo el 46% de la variabilidad de los datos de prueba. Esto indica que el modelo tiene un ajuste moderado y podría necesitar ajustes adicionales o el uso de otro enfoque para mejorar su rendimiento.
+
+Ejemplos de Predicción:
+Los siguientes son ejemplos de predicción con el modelo entrenado:
+Precio Real	Predicción
+720.00	698.72
+699.00	706.66
+
+Conclusiones:
+Modelo de Random Forest: El modelo de RandomForestRegressor tiene un RMSE de 45.25 y un R2 de 0.46, lo que indica que, aunque tiene cierto poder predictivo, podría beneficiarse de un ajuste de hiperparámetros más preciso o el uso de un modelo diferente. La precisión del modelo es moderada y se debe explorar si un modelo más complejo o un conjunto de características distinto podría mejorar los resultados.
 
 
 Próximos Pasos
