@@ -21,6 +21,7 @@ Hemos creado un entorno de trabajo estructurado de la siguiente manera:
                                                        4-Scaling
                                                        5-Enconding
                                                        6-Modelo predictivo
+                                                       
 ├── src/                 # Scripts de procesamiento, modelado y predicción
 ├── datos/                # Archivos CSV y otros datos recopilados
 ├── README.md            # Descripción del proyecto en español
@@ -41,9 +42,54 @@ Numpy: Para operaciones numéricas.
 Selenium y WebDriver Manager: Para automatización de navegadores web.
 
 
-Resultados y Conclusiones
+Resultados y Conclusiones   
 
-Los resultados y conclusiones del modelo se encuentran en el archivo PDF del repositorio
+Columnas del conjunto eliminadas:
+
+operation: Esta columna podría contener información sobre el tipo de operación (alquiler). 
+
+parkingSpace:  Porcentaje muy alto de nulos. 
+
+detailedType: Esta columna tienes  detalles más específicos del tipo de propiedad que ya están cubiertos por otras columnas más generales. 
+
+hasPlan: Información sobre si hay planos disponibles puede no ser relevante para el análisis de precios. 
+
+address: Las direcciones específicas pueden no ser necesarias si ya tienes información suficiente sobre la ubicación a nivel de barrio o distrito. 
+
+suggestedTexts: Esta columna podría contener textos sugeridos que no son necesarios para tu análisis. 
+
+newDevelopmentFinished: Esta columna tiene detalles más específicos del tipo de propiedad que ya están cubiertos por otras columnas más generales. 
+
+labels: Etiquetas adicionales que pueden no añadir valor a tu análisis actual. 
+
+province: estamos analizando solo madrid 
+
+country: Estamos analizando solo España 
+
+propertyCode: Los códigos únicos de propiedad pueden no ser útiles para el análisis estadístico. 
+
+numPhotos: El número de fotos podría no influir en el análisis de precios y por lo tanto ser innecesario. 
+
+latitude y longitude: Las coordenadas específicas pueden no ser necesarias si ya tienes datos de ubicación categórica como barrio o distrito. 
+
+description: Descripciones textuales pueden no ser útiles para el análisis cuantitativo. 
+
+hasVideo: Información sobre la disponibilidad de videos podría no ser relevante para el análisis de precios. 
+
+has3DTour: Similar a hasVideo, si los tours en 3D no son relevantes para tu análisis, esta columna puede ser eliminada. 
+
+has360: Si la disponibilidad de vistas en 360 grados no es relevante para tu análisis, puedes eliminar esta columna. 
+
+hasStaging: Información sobre la puesta en escena puede no ser relevante para el análisis de precios. 
+
+superTopHighlight: Indicadores de destacados especiales pueden no ser útiles para el análisis de precios. 
+
+topNewDevelopment: Si la condición de desarrollo nuevo superior no es relevante, esta columna puede ser eliminada. 
+
+externalReference: Referencias externas pueden no añadir valor a tu análisis estadístico. 
+                                                       
+
+**Los resultados y conclusiones del modelo se encuentran en el archivo PDF del repositorio**
 
 Próximos Pasos
 📈 Después de recopilar y analizar los datos actuales, el próximo paso es implementar técnicas de paralelización y asincronía para mejorar la eficiencia del scraping y el procesamiento de datos.
