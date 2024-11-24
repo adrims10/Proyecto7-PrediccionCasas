@@ -21,7 +21,7 @@ Hemos creado un entorno llamado Webscraping para el siguiente proyecto.
         ├── README.md            # Descripción del proyecto
 
 
-##Resultados y conclusiones
+## Resultados y conclusiones:
 
 
 **Columnas del conjunto eliminadas:**
@@ -69,23 +69,32 @@ topNewDevelopment: Si la condición de desarrollo nuevo superior no es relevante
 externalReference: Referencias externas pueden no añadir valor a tu análisis estadístico. 
 
 **Tratamiento de duplicados:**
+
 Con respecto a los 8 unicos valores que teniamos duplicados, lo hemos borrado.
 
 
 **Tratamiento de duplicados:**
+
 Con respecto a los 8 unicos valores que teniamos duplicados, lo hemos borrado.
 
 
 **Gestion de nulos:**
+
 Vamos a reemplazar categoricas por  valor desconocido.
+
 Vamos a reemplazar las variables numericas con el método 
 
 
 **Gestion de outlaiiers:**
+
 La cantidad de outliers que tenemos para la columna SIZE es 175
+
 La cantidad de outliers que tenemos para la columna ROOMS es 107
+
 La cantidad de outliers que tenemos para la columna BATHROOMS es 220
+
 La cantidad de outliers que tenemos para la columna PRICEBYAREA_KNN es 134
+
 La cantidad de outliers que tenemos para la columna PARKINGSPACEPRICE_KNN es 130
 
 
