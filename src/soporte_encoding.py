@@ -90,7 +90,7 @@ class Analisis_Visual_Encoding:
                           errorbar= 'ci')
             
             axes[indice].tick_params(rotation=90)
-            axes[indice].get_legend().remove() # eliminamos la leyenda de las gráficas
+            #axes[indice].get_legend().remove() # eliminamos la leyenda de las gráficas
 
 
         fig.tight_layout()
@@ -280,7 +280,7 @@ class TestEstadisticos:
         diferencias_significativas = resultado_posthoc.reject
         tukey_df =  pd.DataFrame(data=resultado_posthoc._results_table.data[1:], columns=resultado_posthoc._results_table.data[0])
         tukey_df['group_diff'] = tukey_df['group1'] + '-' + tukey_df['group2']
-        return tukey_df[tukey_df["p-adj"] <= 0.05][['meandiff', 'p-adj', 'lower', 'upper', 'group_diff']]
+        return tukey_df[tukey_df["p-adj"] <= 1.05][['meandiff', 'p-adj', 'lower', 'upper', 'group_diff']]
 
     def run_all_tests(self):
         """
@@ -295,13 +295,13 @@ class TestEstadisticos:
 
 
         test_methods = {
-            "mannwhitneyu": self.test_manwhitneyu,
-            "wilcoxon": self.test_wilcoxon,
-            "kruskal": self.test_kruskal,
-            "anova": self.test_anova
+            "m": self.test_manwhitneyu,
+            "w": self.test_wilcoxon,
+            "k": self.test_kruskal,
+            "a": self.test_anova
         }
 
-        test_choice = input("¿Qué test desea realizar? (mannwhitneyu, wilcoxon, kruskal, anova): ").strip().lower()
+        test_choice = input("¿Qué test desea realizar? (m, w, k, a): ").strip().lower()
         test_method = test_methods.get(test_choice)
         if test_method:
             print(f"\nRealizando test de {test_choice.capitalize()}...")
@@ -464,7 +464,7 @@ class Encoding:
             target_encoder = TargetEncoder(smooth="auto")
 
             # transformamos los datos de las columnas almacenadas en la variable col_code y añadimos la variable respuesta para que calcule la media ponderada para cada categória de las variables
-            target_encoder_trans = target_encoder.fit_transform(self.dataframe[self.variable_respuesta], self.dataframe[[col_encode]])
+            target_encoder_trans = target_encoder.fit_transform(self.dataframe[col_encode], self.dataframe[[self.variable_respuesta]])
             
             # creamos un DataFrame con los resultados de la transformación
             target_encoder_df = pd.DataFrame(target_encoder_trans, columns=target_encoder.get_feature_names_out())
