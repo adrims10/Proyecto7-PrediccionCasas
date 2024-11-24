@@ -277,16 +277,18 @@ Precio Real	Predicción
 720.00	698.72
 699.00	706.66
 
-Conclusiones:
+# Conclusiones:
 
 Modelo de Random Forest: El modelo de RandomForestRegressor tiene un RMSE de 45.25 y un R2 de 0.46, lo que indica que, aunque tiene cierto poder predictivo, podría beneficiarse de un ajuste de hiperparámetros más preciso o el uso de un modelo diferente. La precisión del modelo es moderada y se debe explorar si un modelo más complejo o un conjunto de características distinto podría mejorar los resultados.
 
 
-Próximos Pasos
-📈 Después de recopilar y analizar los datos actuales, el próximo paso es implementar técnicas de paralelización y asincronía para mejorar la eficiencia del scraping y el procesamiento de datos.
+# Próximos Pasos:
+📈 Añadir mas zonas geograficas. 
 
-Seguir entrenando el modelo predictivo.
-Abarcar mas zonas geograficas.
+   Entrenar mas el modelo.
+   
+   Dar un poco mas de orden a los notebooks
+   
 
 
 🏍️ 🌟
