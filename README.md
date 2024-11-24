@@ -1,38 +1,30 @@
 # Proyecto7-PrediccionCasas
+![casa](https://github.com/user-attachments/assets/cc64f4e9-190a-41a0-b4db-dea25427da44)
+
 ¡Bienvenidos!
 Es un placer recibirlos en este nuevo proyecto.
 
 📝 ¿En qué consiste?
 
-¡Bienvenidos a un nuevo proyecto! Esta vez nos enfocaremos en el análisis y predicción de precios de viviendas, abarcando múltiples factores que influyen en el mercado inmobiliario.
+Introducción
+La predicción de precios de bienes inmuebles es un área clave en la intersección de los negocios y la ciencia de datos. En este proyecto, abordarás el desafío de estimar el precio de las casas. Trabajaras con un conjunto de datos real, que contiene información detallada sobre propiedades en Madrid, como su tamaño, ubicación, número de habitaciones, tipo de propiedad, y más. El objetivo principal del proyecto es predecir el precio de una casa,
 
-Objetivos del Proyecto
-Recopilación de Datos: Extraer información detallada sobre precios de viviendas, características de las propiedades, ubicación y otros factores relevantes.
-
-Almacenamiento en Base de Datos: Crear una base de datos en SQL para almacenar la información recopilada de manera estructurada.
-
-Análisis de Datos:
-
-Comparación de precios entre diferentes ubicaciones.
-
-Análisis de la evolución de precios a lo largo del tiempo.
-
-Detección de tendencias y anomalías en los precios.
-
-Análisis de factores que influyen en los precios.
-
-Predicción de Precios: Utilizar modelos de machine learning para predecir los precios futuros de las viviendas.
-
-Visualización de Datos: Crear gráficos y visualizaciones interactivas para presentar los hallazgos del análisis.
+Contexto del Problema
+El mercado inmobiliario es dinámico y está influenciado por múltiples variables, como la ubicación, las características de la propiedad y las condiciones económicas. Un modelo predictivo preciso puede ser una herramienta poderosa para agentes inmobiliarios, compradores y vendedores. Este proyecto te sumergirá en la complejidad de estos factores y te enseñará cómo transformarlos en conocimiento útil para la toma de decisiones.
 
 🗂️ Estructura del Proyecto
 Hemos creado un entorno de trabajo estructurado de la siguiente manera:
 
-├── notebooks/           # Notebooks de Jupyter con la limpieza de datos, análisis y visualización
+├── notebooks/           # Notebooks de Jupyter donde: 1-Exploracion 
+                                                       2-Gestion de nulos
+                                                       3-Gestion de outlaiers
+                                                       4-Scaling
+                                                       5-Enconding
+                                                       6-Modelo predictivo
 ├── src/                 # Scripts de procesamiento, modelado y predicción
-├── data/                # Archivos CSV y otros datos recopilados
+├── datos/                # Archivos CSV y otros datos recopilados
 ├── README.md            # Descripción del proyecto en español
-├── README_English.md    # Descripción del proyecto en inglés
+├── Archivo presentacion resultados    #Descripción y conclusiones del modelo
 🛠️ Instalación y Requisitos
 Este proyecto utiliza Python 3.12.6. Aquí tienes las bibliotecas necesarias:
 
@@ -48,25 +40,16 @@ Numpy: Para operaciones numéricas.
 
 Selenium y WebDriver Manager: Para automatización de navegadores web.
 
-📝 Webs Utilizadas
-Fuente de Datos Inmobiliarios
 
 Resultados y Conclusiones
-En primer lugar, analizamos múltiples ubicaciones y características de las viviendas, obteniendo un total de X datos.
 
-Evolución de Precios: Se observó una tendencia general de aumento en los precios de las viviendas en las principales ciudades analizadas.
-
-Factores Influyentes: Las características como el tamaño de la propiedad, el número de habitaciones y la proximidad a servicios fueron determinantes en los precios.
-
-Anomalías y Tendencias: Se identificaron ciertas anomalías en los datos, indicando posibles áreas de sobrevaloración o subvaloración.
+Los resultados y conclusiones del modelo se encuentran en el archivo PDF del repositorio
 
 Próximos Pasos
 📈 Después de recopilar y analizar los datos actuales, el próximo paso es implementar técnicas de paralelización y asincronía para mejorar la eficiencia del scraping y el procesamiento de datos.
 
-Mejorar Visualizaciones: Desarrollar funciones de soporte para visualizaciones más detalladas y accesibles.
+Seguir entrenando el modelo predictivo.
+Abarcar mas zonas geograficas.
 
-Limpieza de Datos Adicional: Refinar la limpieza de datos para incluir más detalles sobre las características de las propiedades.
-
-Modelos de Predicción: Implementar y mejorar modelos predictivos para obtener estimaciones más precisas de precios futuros.
 
 🏍️ 🌟
