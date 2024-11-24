@@ -16,17 +16,11 @@ El mercado inmobiliario es dinámico y está influenciado por múltiples variabl
 Hemos creado un entorno de trabajo estructurado de la siguiente manera:
 
 
-├── notebooks/           # Notebooks de Jupyter donde: 1-Exploracion 
-                                                       2-Gestion de nulos
-                                                       3-Gestion de outlaiers
-                                                       4-Scaling
-                                                       5-Enconding
-                                                       6-Modelo predictivo
-                                                       
-├── src/                 # Scripts de procesamiento, modelado y predicción
+├── notebooks/           # Notebooks de Jupyter donde podemos encontrar el tratado de datos y el modelo                                          ├── src/                 # Scripts de procesamiento, modelado y predicción
 ├── datos/                # Archivos CSV y otros datos recopilados
 ├── README.md            # Descripción del proyecto en español
 ├── Archivo presentacion resultados    #Descripción y conclusiones del modelo
+
 🛠️ Instalación y Requisitos
 Este proyecto utiliza Python 3.12.6. Aquí tienes las bibliotecas necesarias:
 
@@ -45,7 +39,7 @@ Selenium y WebDriver Manager: Para automatización de navegadores web.
 
 Resultados y Conclusiones   
 
-Columnas del conjunto eliminadas:
+**Columnas del conjunto eliminadas:**
 
 operation: Esta columna podría contener información sobre el tipo de operación (alquiler). 
 
@@ -88,9 +82,110 @@ superTopHighlight: Indicadores de destacados especiales pueden no ser útiles pa
 topNewDevelopment: Si la condición de desarrollo nuevo superior no es relevante, esta columna puede ser eliminada. 
 
 externalReference: Referencias externas pueden no añadir valor a tu análisis estadístico. 
-                                                       
 
-**Los resultados y conclusiones del modelo se encuentran en el archivo PDF del repositorio**
+**Tratamiento de duplicados:**
+Con respecto a los 8 unicos valores que teniamos duplicados, lo hemos borrado.
+
+**Tratamiento de duplicados:**
+Con respecto a los 8 unicos valores que teniamos duplicados, lo hemos borrado.
+
+**Gestion de nulos:**
+Vamos a reemplazar categoricas por  valor desconocido.
+Vamos a reemplazar las variables numericas con el método 
+
+**Gestion de outlaiiers:**
+La cantidad de outliers que tenemos para la columna SIZE es 175
+La cantidad de outliers que tenemos para la columna ROOMS es 107
+La cantidad de outliers que tenemos para la columna BATHROOMS es 220
+La cantidad de outliers que tenemos para la columna PRICEBYAREA_KNN es 134
+La cantidad de outliers que tenemos para la columna PARKINGSPACEPRICE_KNN es 130
+
+Hemos gestionado los outlaiers mediante un imputador por la mediana.
+
+
+**Preprocesamiento:**
+
+Las variables categóricas fueron codificadas mediante un TargetEncoder, mientras que las variables numéricas se escalaron con 
+un StandardScaler.
+
+## Resultado Modelo 1:
+
+1. División de datos:
+a. Los datos se dividieron en conjuntos de entrenamiento y prueba con un 
+tamaño del 70% para entrenamiento y el 30% para prueba.
+
+2. Modelo de predicción:
+a. Se utilizó un modelo de Random Forest Regressor con una semilla fija 
+para garantizar la reproducibilidad.
+
+b. El modelo fue entrenado con el conjunto de datos preprocesados.
+
+4. Evaluación del modelo:
+   
+a. La métrica principal utilizada fue el Error Cuadrático Medio (RMSE), que 
+resultó ser de 12.44. Este valor indica una baja desviación entre las 
+predicciones y los valores reales, sugiriendo un modelo robusto para 
+este conjunto de datos.
+
+b. Ejemplos de predicción mostraron un alto grado de precisión, con 
+predicciones muy cercanas a los valores reales:
+
+i. Precio real: 720.00, Predicción: 720.02
+ii. Precio real: 699.00, Predicción: 699.12
+
+## Resultado Modelo 2:
+
+1. División de datos:
+   
+a. Los datos se dividieron en conjuntos de entrenamiento y prueba con un 
+tamaño del 80% para entrenamiento y el 20% para prueba.
+
+2. Modelo de predicción:
+a. Se utilizó un modelo de Decision Tree Regresor con una semilla fija para 
+garantizar la reproducibilidad.
+
+b. El modelo fue entrenado con el conjunto de datos preprocesados.
+
+3. Evaluación del modelo:
+
+a. La métrica principal utilizada fue el Error Cuadrático Medio (RMSE), que 
+resultó ser de 14.53. Este valor indica una baja desviación entre las 
+predicciones y los valores reales, sugiriendo un modelo robusto para 
+este conjunto de datos.
+
+b. Ejemplos de predicción mostraron un alto grado de precisión, con 
+predicciones muy cercanas a los valores reales:
+
+i. Precio real: 720.00, Predicción: 718.00
+ii. Precio real: 699.00, Predicción: 699.00
+
+## Resultado Modelo 3:
+
+1. División de datos:
+   
+a. Los datos se dividieron en conjuntos de entrenamiento y prueba con un tamaño del 70% para
+entrenamiento y el 30% para prueba.
+
+2. Modelo de predicción:
+   
+a. Se utilizó un modelo de Gradient Boosting Regressor con una tasa de aprendizaje de 0.1 y 100
+estimadores, asegurando un balance entre complejidad y precisión.
+
+b. El modelo fue entrenado con el conjunto de datos preprocesados.
+
+3. Evaluación del modelo:
+   
+a. La métrica principal utilizada fue el Error Cuadrático Medio (RMSE), que resultó ser de 8.67. Este
+valor indica una excelente precisión y baja desviación entre las predicciones y los valores reales,
+sugiriendo un modelo altamente robusto para este conjunto de datos.
+
+b. Ejemplos de predicción mostraron un alto grado de precisión, con predicciones muy cercanas a
+los valores reales:
+
+Proceso y conclusiones modelo
+ i. Precio real: 720.00, Predicción: 719.85
+ ii. Precio real: 699.00, Predicción: 699.12
+
 
 Próximos Pasos
 📈 Después de recopilar y analizar los datos actuales, el próximo paso es implementar técnicas de paralelización y asincronía para mejorar la eficiencia del scraping y el procesamiento de datos.
