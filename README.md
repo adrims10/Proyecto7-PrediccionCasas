@@ -208,16 +208,23 @@ a. Tipo de modelo:
 Se optimizó mediante una búsqueda de hiperparámetros utilizando GridSearchCV, con los mejores parámetros encontrados siendo:
 
    max_depth: 5
+   
    max_leaf_nodes: 4
+   
    min_samples_leaf: 10
+   
    min_samples_split: 10.
 
    Definiciones de parametros:
    
    max_depth: Controla la complejidad global del árbol limitando su profundidad.
+   
    max_leaf_nodes: Limita el número total de nodos hoja, restringiendo aún más la complejidad del modelo.
+   
    min_samples_leaf: Asegura que los nodos hoja no sean demasiado pequeños, promoviendo la generalización.
+   
    min_samples_split: Establece el umbral para dividir un nodo, previniendo divisiones excesivas en datos pequeños.
+   
    
 b. Entrenamiento del modelo:
 
@@ -248,6 +255,7 @@ División de Datos:
 a. Datos de entrenamiento y prueba:
 
    El conjunto de datos fue dividido en un 70% para entrenamiento y un 30% para prueba.
+   
    El conjunto de entrenamiento tiene una forma de (70, 24) y el conjunto de prueba tiene una forma de (283, 24).
 
 Modelo de Predicción:
@@ -259,16 +267,24 @@ a. Tipo de modelo:
 Se optimizó mediante una búsqueda de hiperparámetros utilizando GridSearchCV, con los mejores parámetros encontrados siendo:
 
    max_depth: 5
+   
    max_features: 'sqrt'
+   
    min_samples_leaf: 10
+   
    min_samples_split: 10
+   
    n_estimators: 200
 
    max_depth: Limita la profundidad de cada árbol, controlando la complejidad individual.
-   max_features: Controla cuántas características se consideran para dividir cada nodo, con 'sqrt' seleccionando la raíz cuadrada del número total de características, 
+   
+   max_features: Controla cuántas características se consideran para dividir cada nodo, con 'sqrt' seleccionando la raíz cuadrada del número total de características,
                  lo que ayuda a reducir el sobreajuste.
+                 
    min_samples_leaf: Asegura que las hojas tengan suficientes muestras para mejorar la generalización del modelo.
+   
    min_samples_split: Define el número mínimo de muestras para dividir un nodo, evitando divisiones que no agreguen valor.
+   
    n_estimators: El número de árboles en el bosque, que afecta la estabilidad y precisión del modelo.
    
 
