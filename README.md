@@ -15,6 +15,7 @@ El mercado inmobiliario es dinámico y está influenciado por múltiples variabl
 🗂️ Estructura del Proyecto
 Hemos creado un entorno de trabajo estructurado de la siguiente manera:
 
+
 ├── notebooks/           # Notebooks de Jupyter donde: 1-Exploracion 
                                                        2-Gestion de nulos
                                                        3-Gestion de outlaiers
@@ -99,3 +100,4 @@ Abarcar mas zonas geograficas.
 
 
 🏍️ 🌟
+![OIP](https://github.com/user-attachments/assets/a3261f22-9193-45df-bf33-14a396dfd988)
