@@ -110,27 +110,29 @@ un StandardScaler.
 ## Resultado Modelo 1:
 
 1. División de datos:
+   
 a. Los datos se dividieron en conjuntos de entrenamiento y prueba con un 
-tamaño del 70% para entrenamiento y el 30% para prueba.
+   tamaño del 70% para entrenamiento y el 30% para prueba.
 
-2. Modelo de predicción:
+3. Modelo de predicción:
+   
 a. Se utilizó un modelo de Random Forest Regressor con una semilla fija 
-para garantizar la reproducibilidad.
+   para garantizar la reproducibilidad.
 
 b. El modelo fue entrenado con el conjunto de datos preprocesados.
 
 4. Evaluación del modelo:
    
 a. La métrica principal utilizada fue el Error Cuadrático Medio (RMSE), que 
-resultó ser de 12.44. Este valor indica una baja desviación entre las 
-predicciones y los valores reales, sugiriendo un modelo robusto para 
-este conjunto de datos.
+   resultó ser de 12.44. 
+   Este valor indica una baja desviación entre las predicciones y los valores reales, sugiriendo un modelo robusto para 
+   este conjunto de datos.
 
 b. Ejemplos de predicción mostraron un alto grado de precisión, con 
-predicciones muy cercanas a los valores reales:
+   predicciones muy cercanas a los valores reales:
 
-i. Precio real: 720.00, Predicción: 720.02
-ii. Precio real: 699.00, Predicción: 699.12
+  i. Precio real: 720.00, Predicción: 720.02
+  ii. Precio real: 699.00, Predicción: 699.12
 
 
 ## Resultado Modelo 2:
@@ -138,49 +140,52 @@ ii. Precio real: 699.00, Predicción: 699.12
 1. División de datos:
    
 a. Los datos se dividieron en conjuntos de entrenamiento y prueba con un 
-tamaño del 80% para entrenamiento y el 20% para prueba.
+   tamaño del 80% para entrenamiento y el 20% para prueba.
 
 2. Modelo de predicción:
+   
 a. Se utilizó un modelo de Decision Tree Regresor con una semilla fija para 
-garantizar la reproducibilidad.
+   garantizar la reproducibilidad.
 
 b. El modelo fue entrenado con el conjunto de datos preprocesados.
 
 3. Evaluación del modelo:
 
 a. La métrica principal utilizada fue el Error Cuadrático Medio (RMSE), que 
-resultó ser de 14.53. Este valor indica una baja desviación entre las 
-predicciones y los valores reales, sugiriendo un modelo robusto para 
-este conjunto de datos.
+   resultó ser de 14.53. 
+   
+   Este valor indica una baja desviación entre las 
+   predicciones y los valores reales, sugiriendo un modelo robusto para 
+   este conjunto de datos.
 
 b. Ejemplos de predicción mostraron un alto grado de precisión, con 
-predicciones muy cercanas a los valores reales:
+   predicciones muy cercanas a los valores reales:
 
-i. Precio real: 720.00, Predicción: 718.00
-ii. Precio real: 699.00, Predicción: 699.00
+   i. Precio real: 720.00, Predicción: 718.00
+   ii. Precio real: 699.00, Predicción: 699.00
 
 ## Resultado Modelo 3:
 
 1. División de datos:
    
 a. Los datos se dividieron en conjuntos de entrenamiento y prueba con un tamaño del 70% para
-entrenamiento y el 30% para prueba.
+   entrenamiento y el 30% para prueba.
 
 2. Modelo de predicción:
    
 a. Se utilizó un modelo de Gradient Boosting Regressor con una tasa de aprendizaje de 0.1 y 100
-estimadores, asegurando un balance entre complejidad y precisión.
+   estimadores, asegurando un balance entre complejidad y precisión.
 
 b. El modelo fue entrenado con el conjunto de datos preprocesados.
 
 3. Evaluación del modelo:
    
-a. La métrica principal utilizada fue el Error Cuadrático Medio (RMSE), que resultó ser de 8.67. Este
-valor indica una excelente precisión y baja desviación entre las predicciones y los valores reales,
-sugiriendo un modelo altamente robusto para este conjunto de datos.
+a. La métrica principal utilizada fue el Error Cuadrático Medio (RMSE), que resultó ser de 8.67. 
+   Este valor indica una excelente precisión y baja desviación entre las predicciones y los valores reales,
+   sugiriendo un modelo altamente robusto para este conjunto de datos.
 
 b. Ejemplos de predicción mostraron un alto grado de precisión, con predicciones muy cercanas a
-los valores reales:
+   los valores reales:
 
 Proceso y conclusiones modelo
  i. Precio real: 720.00, Predicción: 719.85
@@ -188,16 +193,20 @@ Proceso y conclusiones modelo
 
 ## Resultado Modelo 4:
 
-División de Datos:
-a. Datos de entrenamiento y prueba:
+División de Datos:.
 
-El conjunto de datos fue dividido en un 70% para entrenamiento y un 30% para prueba.
-El conjunto de entrenamiento tiene una forma de (70, 24), mientras que el conjunto de prueba tiene una forma de (283, 24).
+a. Datos de entrenamiento y prueba:
+   El conjunto de datos fue dividido en un 70% para entrenamiento y un 30% para prueba.
+   El conjunto de entrenamiento tiene una forma de (70, 24), mientras que el conjunto de prueba tiene una forma de (283, 24).
+
 Modelo de Predicción:
+
 a. Tipo de modelo:
 
 Se utilizó un modelo de Decision Tree Regressor.
+
 Se optimizó mediante una búsqueda de hiperparámetros utilizando GridSearchCV, con los mejores parámetros encontrados siendo:
+
 max_depth: 5
 max_leaf_nodes: 4
 min_samples_leaf: 10
@@ -220,6 +229,7 @@ Precio Real	Predicción
 699.00	687.56
 
 Conclusiones:
+
 Modelo de Árbol de Decisión: Aunque el modelo tiene un RMSE relativamente alto de 27.50, su 
 𝑅2 de 0.80 sugiere que captura bien la variabilidad de los datos. Sin embargo, es posible que un ajuste más fino de los parámetros o el uso de un modelo más complejo pueda mejorar su rendimiento.
 
@@ -227,15 +237,20 @@ Modelo de Árbol de Decisión: Aunque el modelo tiene un RMSE relativamente alto
 ## Resultado Modelo 5:
 
 División de Datos:
+
 a. Datos de entrenamiento y prueba:
+
 El conjunto de datos fue dividido en un 70% para entrenamiento y un 30% para prueba.
 El conjunto de entrenamiento tiene una forma de (70, 24) y el conjunto de prueba tiene una forma de (283, 24).
 
 Modelo de Predicción:
+
 a. Tipo de modelo:
+
 Se utilizó un modelo de RandomForestRegressor.
 
 Se optimizó mediante una búsqueda de hiperparámetros utilizando GridSearchCV, con los mejores parámetros encontrados siendo:
+
 max_depth: 5
 max_features: 'sqrt'
 min_samples_leaf: 10
@@ -248,10 +263,13 @@ El modelo fue entrenado con el conjunto de datos preprocesados, utilizando los m
 
 Evaluación del Modelo:
 
-a. Métrica principal - RMSE (Root Mean Squared Error):
+a. Métrica principal - RMSE (Root Mean Squared Error):El RMSE calculado para el modelo es 45.25, lo que indica una mayor desviación entre las predicciones y los valores reales en comparación con otros modelos.
 
-El RMSE calculado para el modelo es 45.25, lo que indica una mayor desviación entre las predicciones y los valores reales en comparación con otros modelos. Esto sugiere que el modelo podría no estar capturando adecuadamente la variabilidad de los datos.
-b. Métrica secundaria - 𝑅2 del modelo es 0.46, lo que significa que el modelo explica solo el 46% de la variabilidad de los datos de prueba. Esto indica que el modelo tiene un ajuste moderado y podría necesitar ajustes adicionales o el uso de otro enfoque para mejorar su rendimiento.
+Esto sugiere que el modelo podría no estar capturando adecuadamente la variabilidad de los datos.
+
+b. Métrica secundaria - 𝑅2 del modelo es 0.46, lo que significa que el modelo explica solo el 46% de la variabilidad de los datos de prueba. 
+
+Esto indica que el modelo tiene un ajuste moderado y podría necesitar ajustes adicionales o el uso de otro enfoque para mejorar su rendimiento.
 
 Ejemplos de Predicción:
 Los siguientes son ejemplos de predicción con el modelo entrenado:
@@ -260,6 +278,7 @@ Precio Real	Predicción
 699.00	706.66
 
 Conclusiones:
+
 Modelo de Random Forest: El modelo de RandomForestRegressor tiene un RMSE de 45.25 y un R2 de 0.46, lo que indica que, aunque tiene cierto poder predictivo, podría beneficiarse de un ajuste de hiperparámetros más preciso o el uso de un modelo diferente. La precisión del modelo es moderada y se debe explorar si un modelo más complejo o un conjunto de características distinto podría mejorar los resultados.
 
 
