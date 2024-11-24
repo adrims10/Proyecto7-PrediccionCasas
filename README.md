@@ -13,15 +13,12 @@ Contexto del Problema
 El mercado inmobiliario es dinámico y está influenciado por múltiples variables, como la ubicación, las características de la propiedad y las condiciones económicas. Un modelo predictivo preciso puede ser una herramienta poderosa para agentes inmobiliarios, compradores y vendedores. Este proyecto te sumergirá en la complejidad de estos factores y te enseñará cómo transformarlos en conocimiento útil para la toma de decisiones.
 
 **🗂️ Estructura del Proyecto**
-Hemos creado un entorno de trabajo estructurado de la siguiente manera:
+Hemos creado un entorno llamado Webscraping para el siguiente proyecto.
 
-├── notebooks/           # Notebooks de Jupyter donde podemos encontrar el tratado de datos y el modelo                                         ├── src/                 # Scripts de procesamiento, modelado y predicción
-├── datos/               # Archivos CSV y otros datos recopilados
-├── README.md            # Descripción del proyecto en español
-
-
-**🛠️ Instalación y Requisitos**
-
+        ├── notebooks/           # Notebooks de Jupyter donde se encontraran exploracion, tratamiento y modelos predictivos
+        ├── src/                 # Scripts de procesamiento y modelado
+        ├─  Datos                # Datos, donde estaran los archivos csv que se han obtenido
+        ├── README.md            # Descripción del proyecto
 
 
 ##**Resultados y conclusiones**
