@@ -203,26 +203,33 @@ Modelo de Predicción:
 
 a. Tipo de modelo:
 
-Se utilizó un modelo de Decision Tree Regressor.
+   Se utilizó un modelo de Decision Tree Regressor.
 
 Se optimizó mediante una búsqueda de hiperparámetros utilizando GridSearchCV, con los mejores parámetros encontrados siendo:
 
-max_depth: 5
-max_leaf_nodes: 4
-min_samples_leaf: 10
-min_samples_split: 10
+   max_depth: 5
+   max_leaf_nodes: 4
+   min_samples_leaf: 10
+   min_samples_split: 10.
+
+   Definiciones de parametros:
+   
+   max_depth: Controla la complejidad global del árbol limitando su profundidad.
+   max_leaf_nodes: Limita el número total de nodos hoja, restringiendo aún más la complejidad del modelo.
+   min_samples_leaf: Asegura que los nodos hoja no sean demasiado pequeños, promoviendo la generalización.
+   min_samples_split: Establece el umbral para dividir un nodo, previniendo divisiones excesivas en datos pequeños.
+   
 b. Entrenamiento del modelo:
 
-El modelo fue entrenado con el conjunto de datos preprocesados, utilizando los mejores parámetros encontrados.
-Evaluación del Modelo:
+  El modelo fue entrenado con el conjunto de datos preprocesados, utilizando los mejores parámetros encontrados.
+  Evaluación del Modelo:
 
 a. Métrica principal - RMSE (Root Mean Squared Error):
 
-El RMSE calculado para el modelo es 27.50.
+   El RMSE calculado para el modelo es 27.50.Este valor indica una mayor desviación entre las predicciones y los valores reales, sugiriendo que el modelo podría 
+   mejorar en precisión.
 
-Este valor indica una mayor desviación entre las predicciones y los valores reales, sugiriendo que el modelo podría mejorar en precisión.
-
-El coeficiente 𝑅2 del modelo es 0.80, lo que significa que el modelo explica el 80% de la varianza de los datos de prueba, indicando un buen ajuste. 
+   El coeficiente 𝑅2 del modelo es 0.80, lo que significa que el modelo explica el 80% de la varianza de los datos de prueba, indicando un buen ajuste. 
 
 Precio Real	Predicción
 720.00	725.56
@@ -240,36 +247,45 @@ División de Datos:
 
 a. Datos de entrenamiento y prueba:
 
-El conjunto de datos fue dividido en un 70% para entrenamiento y un 30% para prueba.
-El conjunto de entrenamiento tiene una forma de (70, 24) y el conjunto de prueba tiene una forma de (283, 24).
+   El conjunto de datos fue dividido en un 70% para entrenamiento y un 30% para prueba.
+   El conjunto de entrenamiento tiene una forma de (70, 24) y el conjunto de prueba tiene una forma de (283, 24).
 
 Modelo de Predicción:
 
 a. Tipo de modelo:
 
-Se utilizó un modelo de RandomForestRegressor.
+   Se utilizó un modelo de RandomForestRegressor.
 
 Se optimizó mediante una búsqueda de hiperparámetros utilizando GridSearchCV, con los mejores parámetros encontrados siendo:
 
-max_depth: 5
-max_features: 'sqrt'
-min_samples_leaf: 10
-min_samples_split: 10
-n_estimators: 200
+   max_depth: 5
+   max_features: 'sqrt'
+   min_samples_leaf: 10
+   min_samples_split: 10
+   n_estimators: 200
+
+   max_depth: Limita la profundidad de cada árbol, controlando la complejidad individual.
+   max_features: Controla cuántas características se consideran para dividir cada nodo, con 'sqrt' seleccionando la raíz cuadrada del número total de características, 
+                 lo que ayuda a reducir el sobreajuste.
+   min_samples_leaf: Asegura que las hojas tengan suficientes muestras para mejorar la generalización del modelo.
+   min_samples_split: Define el número mínimo de muestras para dividir un nodo, evitando divisiones que no agreguen valor.
+   n_estimators: El número de árboles en el bosque, que afecta la estabilidad y precisión del modelo.
+   
 
 b. Entrenamiento del modelo:
 
-El modelo fue entrenado con el conjunto de datos preprocesados, utilizando los mejores parámetros encontrados.
+   El modelo fue entrenado con el conjunto de datos preprocesados, utilizando los mejores parámetros encontrados.
 
 Evaluación del Modelo:
 
-a. Métrica principal - RMSE (Root Mean Squared Error):El RMSE calculado para el modelo es 45.25, lo que indica una mayor desviación entre las predicciones y los valores reales en comparación con otros modelos.
+a. Métrica principal - RMSE (Root Mean Squared Error):El RMSE calculado para el modelo es 45.25, lo que indica una mayor desviación entre las predicciones y los 
+   valores reales en comparación con otros modelos.
 
-Esto sugiere que el modelo podría no estar capturando adecuadamente la variabilidad de los datos.
+   Esto sugiere que el modelo podría no estar capturando adecuadamente la variabilidad de los datos.
 
 b. Métrica secundaria - 𝑅2 del modelo es 0.46, lo que significa que el modelo explica solo el 46% de la variabilidad de los datos de prueba. 
 
-Esto indica que el modelo tiene un ajuste moderado y podría necesitar ajustes adicionales o el uso de otro enfoque para mejorar su rendimiento.
+   Esto indica que el modelo tiene un ajuste moderado y podría necesitar ajustes adicionales o el uso de otro enfoque para mejorar su rendimiento.
 
 Ejemplos de Predicción:
 Los siguientes son ejemplos de predicción con el modelo entrenado:
@@ -277,7 +293,7 @@ Precio Real	Predicción
 720.00	698.72
 699.00	706.66
 
-# Conclusiones:
+Conclusiones:
 
 Modelo de Random Forest: El modelo de RandomForestRegressor tiene un RMSE de 45.25 y un R2 de 0.46, lo que indica que, aunque tiene cierto poder predictivo, podría beneficiarse de un ajuste de hiperparámetros más preciso o el uso de un modelo diferente. La precisión del modelo es moderada y se debe explorar si un modelo más complejo o un conjunto de características distinto podría mejorar los resultados.
 
